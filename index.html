@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub | Explore & Register Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-calendar-days"></i> EventHub</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover & Join Amazing Events</h1>
+            <p>Your one-stop platform for campus workshops, tech fests, and cultural summits.</p>
+            <div class="countdown-container">
+                <h3>Next Big Event Starts In:</h3>
+                <div id="timer">
+                    <div><span id="days">00</span><small>Days</small></div>
+                    <div><span id="hours">00</span><small>Hours</small></div>
+                    <div><span id="minutes">00</span><small>Mins</small></div>
+                    <div><span id="seconds">00</span><small>Secs</small></div>
+                </div>
+            </div>
+            <a href="#events" class="cta-btn">Browse Events</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="events" class="container">
+        <section class="controls">
+            <input type="text" id="search-input" placeholder="Search events by title or venue...">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="Technical">Technical</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+        </section>
+
+        <!-- Dynamic Event Cards -->
+        <section id="event-grid" class="event-grid"></section>
+    </main>
+
+    <!-- Event Detail Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <section id="register" class="registration-section">
+        <h2>Register for an Event</h2>
+        <form id="registration-form" novalidate>
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" required placeholder="Enter your full name">
+                <small class="error-msg"></small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+                <small class="error-msg"></small>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="10-digit mobile number">
+                <small class="error-msg"></small>
+            </div>
+            <div class="form-group">
+                <label for="event-select">Select Event</label>
+                <select id="event-select" required>
+                    <option value="">-- Choose an Event --</option>
+                </select>
+                <small class="error-msg"></small>
+            </div>
+            <button type="submit" class="submit-btn">Complete Registration</button>
+        </form>
+        <div id="confirmation-message" class="hidden alert-success"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EventHub | K Explore Web Designing Submission</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
